@@ -1,25 +1,12 @@
-# version: 0.2
-
-# phases:
-#   install:
-#     commands:
-#       - echo "No dependencies to install for a static site."
-#   build:
-#     commands:
-#       - echo "Packaging static site..."
-# artifacts:
-#   files:
-#     - '**/*'  # Include all files in the output artifact
-
 version: 0.2
 
 phases:
   install:
     commands:
-      - echo "No dependencies for a static site."
+      - echo "No dependencies to install for a static site."
   build:
     commands:
-      - echo "Building the static site..."
+      - echo "Packaging static site..."
   post_build:
     commands:
       - echo "Deploying files to S3..."
@@ -27,3 +14,5 @@ phases:
 artifacts:
   files:
     - '**/*'  # Include all files in the output artifact
+
+
