@@ -23,4 +23,4 @@ phases:
   post_build:
     commands:
       - echo "Deploying to S3..."
-      - aws s3 sync . s3://your-bucket-name --delete  # Ensure the --delete flag is present
+      - aws s3 sync . s3://cicd-project-aws --delete  # Ensure the --delete flag is present
