@@ -16,11 +16,14 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "No dependencies for static site."
+      - echo "No dependencies for a static site."
   build:
     commands:
       - echo "Building the static site..."
   post_build:
     commands:
-      - echo "Syncing files to S3..."
+      - echo "Deploying files to S3..."
       - aws s3 sync . s3://cicd-project-aws --delete
+artifacts:
+  files:
+    - '**/*'  # Include all files in the output artifact
