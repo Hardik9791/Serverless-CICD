@@ -1,12 +1,26 @@
+# version: 0.2
+
+# phases:
+#   install:
+#     commands:
+#       - echo "No dependencies to install for a static site."
+#   build:
+#     commands:
+#       - echo "Packaging static site..."
+# artifacts:
+#   files:
+#     - '**/*'  # Include all files in the output artifact
+
 version: 0.2
 
 phases:
   install:
     commands:
-      - echo "No dependencies to install for a static site."
+      - echo "No dependencies for static site."
   build:
     commands:
-      - echo "Packaging static site..."
-artifacts:
-  files:
-    - '**/*'  # Include all files in the output artifact
+      - echo "Building the static site..."
+  post_build:
+    commands:
+      - echo "Deploying to S3..."
+      - aws s3 sync . s3://your-bucket-name --delete  # Ensure the --delete flag is present
