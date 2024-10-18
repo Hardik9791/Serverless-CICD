@@ -10,5 +10,3 @@ phases:
 artifacts:
   files:
     - '**/*'  # Include all files in the output artifact
-
-
